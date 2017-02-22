@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	<!--
+	1)O JSF tem uma biblioteca de componentes padrão, como botão. Pra usar esses componentes precisamos usar uma
+	biblioteca que vem na implementação do JSF. Então precisamos importar o namespace "http://java.sun.com/jsf/html"
+	e o apelido desse namespace é a letra "h"
+	
+	2)Tudo que leva "h:" são componentes do JSF, então ele pode gerenciar esses componenetes. O JSF cria uma árvore
+	de componentes
+	
+	3)O JSF não roda no cliente mas sim no servidor. 
+	
+	4)Na url precisamos colocar /faces/teste.xhtml tudo pra ativar o JSF
+	
+	5)O arquivo web.xml configura a implantação da aplicação no container web-->
+	<h:form>
+		Nome: <h:inputText value="#{testeBean2.nome}"/><!-- A classe "TesteBean" vai gerenciar essa tela	 -->
+		<br />
+		Idade: <h:inputText value="#{testeBean2.idade}"></h:inputText>
+		
+		<br />
+		<h:commandButton value="Enviar" action="#{testeBean2.maiusculo}"></h:commandButton>
+
+	</h:form>
+	
+	<br />
+	Nome Digitado: #{testeBean2.nome}
+	<br />
+	Idade Digitada: #{testeBean2.idade}
+</h:body>
+</html>
